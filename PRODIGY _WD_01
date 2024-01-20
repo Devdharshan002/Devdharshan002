@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Interactive Navigation Menu</title>
+</head>
+<body>
+  <div class="navbar" id="navbar">
+    <a href="#" class="nav-item">Home</a>
+    <a href="#" class="nav-item">About</a>
+    <a href="#" class="nav-item">Services</a>
+    <a href="#" class="nav-item">Contact</a>
+  </div>
+  <div class="content">
+    <!-- Your page content goes here -->
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+.content {
+  margin-top: 80px; /* Adjust this margin based on your navbar height */
+  padding: 20px;
+  text-align: center;
+}
+document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      navbar.style.backgroundColor = '#555';
+    } else {
+      navbar.style.backgroundColor = '#333';
+    }
+  });
+});
